@@ -18,14 +18,15 @@
             grid-template-rows: auto;
             grid-gap: 20px;
         }
-        /* 媒体查询设置 */
-        @media only screen and (min-width:440px){
+        /* 媒体查询设置 */   
+
+		@media only screen and (min-width:440px){
             .band {
                 grid-template-columns: 1fr 1fr ;
             }
             .item-1{
             grid-column: 1/ span 2;
-        }
+			}
         }
 
         @media only screen and (min-width: 850px){
@@ -35,7 +36,34 @@
             .item-1{
             grid-column: 1/ span 2;
         }
-        }
+		
+		/* 头像呼吸灯 */
+		#breathing{
+			width: 150px;
+			height: 150px;
+			position: absolute;
+			top: 50%;
+			left: 50px;
+			margin-top: -75px;
+			-webkit-animation:myfirst 3.3s infinite;
+		}
+        }                
+		
+		@media only screen and (max-width: 850px){
+
+		/* 头像呼吸灯 */
+		
+		#breathing{
+			width: 150px;
+			height: 150px;
+			position: relative;
+			top: 25px;
+			text-align: center;
+			-webkit-animation:myfirst 3.3s infinite;
+		}
+        }        
+		
+
         /* flex容器，控制纵向 */
         .card{
             background: white;
@@ -88,6 +116,7 @@
             background-size: cover;
             background-position: center center;
         }
+		
         /* 首卡片特殊展示 */        
         .item-1 .thumb{
             height: 360px;
@@ -109,23 +138,33 @@
         #main .right p{
             text-align: center;
         }
-
-        /* 虚化背景 */
-        #firstpage{
-            margin: 0 0 20px 0;
-        }
-
-        #firstpage a{
+		
+ 		/* 头像呼吸灯 */
+		
+        #banner{
             text-decoration: none;
-            position: absolute;
+            position: relative;
             top: 50%;
             transform: translateY(-50%);
             width: 100%;
         }
+
+		@keyframes myfirst
+		{
+		0%		{opacity:0;}
+		70%	{opacity:1;}
+		100%	{opacity:0;}
+		}
+		
+        /* 虚化背景 */
+        #firstpage{
+            margin: 0 0 20px 0;
+        }
+		
         .firstbackground{
             height: 750px;
             background-image: url(img-0.jpg);
-            background-size: 100%;
+            background-size: cover;
             background-attachment: fixed;
             margin: 0;
         }
@@ -146,20 +185,37 @@
             font-size: 2.4em;
             color: black;
         }
+
+		.band p{
+			font-family: Microsoft Yahei Light;
+		}
+
+        /* #firstbackground修改 */
+		#firstpage:hover {  
+        top: 0px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		
     </style>
 </head>
 <body>
     <div id="firstpage" class="card">
         <div class="firstbackground">
-            <a href="javascript:void(0)">
+            <div id="banner" href="javascript:void(0)">
                 <div class="title">
+
                     <article>
                         <h1>生如夏花</h1>
-                        <p>Let life be beautiful like summer flowers</p>
+						<div>
+							<img id='breathing' src="red.png">
+						</div>
+                        <p id='flowers'>Let life be beautiful like summer flowers</p>
                         <span>by RABINDRANATH TAGORE</span>
                     </article>
                 </div>
-            </a>
+            </div>
+
         </div>
     </div>
     <div class="band">
