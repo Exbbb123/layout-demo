@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>生如夏花</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/video_background.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/video_background.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
     <style>
-        body{
-            background-color: #eaeaea;
-        }
-        /* grid容器，控制横向 */
-        .band{
-            background-color: white;
-            padding: 20px;
-            width: 92%;
-            margin: 0 auto 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
-            grid-gap: 20px;
-        }
-        /* 媒体查询设置 */   
 
+        /* 媒体查询 */   
 		@media only screen and (min-width:440px){
             .band {
                 grid-template-columns: 1fr 1fr ;
@@ -50,9 +40,7 @@
         }                
 		
 		@media only screen and (max-width: 850px){
-
 		/* 头像呼吸灯 */
-		
 		#breathing{
 			width: 150px;
 			height: 150px;
@@ -61,163 +49,77 @@
 			text-align: center;
 			-webkit-animation:myfirst 3.3s infinite;
 		}
-        }        
-		
-
-        /* flex容器，控制纵向 */
-        .card{
-            background: white;
-            text-decoration: none;
-            color: #444;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            min-height: 100%;
-            position: relative;
-            top: 0;
-            transition: all .1s ease-in;
-        }
-
-        .card:hover{
-            top: -2px;
-            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2)
-        }
-
-        .card article{
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card h1 {
-            font-size: 20px;
-            margin: 0;
-            color: #333;
-        }
-
-        .card p {
-            line-height: 1.4;
-            flex: 1;
-            line-height: 1.4;
-        }
-
-        .card span {
-            font-size: 12px;
-            font-weight: bold;
-            color: #999;
-            letter-spacing: .05em;
-            margin: 2em 0 0 0 ;
-        }
-
-        .card .thumb {
-            height: 180px;
-            background-size: cover;
-            background-position: center center;
         }
 		
-        /* 首卡片特殊展示 */        
-        .item-1 .thumb{
-            height: 360px;
-        }
 
-        #main{
-            display: flex;
-            flex-direction: row;
-        }
-
-        #main .left{
-            flex-grow: 1;
-        }
-
-        #main .right{
-            flex-grow: 2;
-        }
-
-        #main .right p{
-            text-align: center;
-        }
+    #main_content {
+		width:100%;
+		z-index: 2;
+		position: absolute;
+		display: inline-block;
+		text-align:center;
 		
- 		/* 头像呼吸灯 */
-		
-        #banner{
-            text-decoration: none;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-        }
+		/* Vertical center */
+		top:50%;
+		margin: 0 auto 0;
+    }
 
-		@keyframes myfirst
-		{
-		0%		{opacity:0;}
-		70%	{opacity:1;}
-		100%	{opacity:0;}
-		}
-		
-        /* 虚化背景 */
-        #firstpage{
-            margin: 0 0 20px 0;
-        }
-		
-        .firstbackground{
-            height: 750px;
-            background-image: url(img-0.jpg);
-            background-size: cover;
-            background-attachment: fixed;
-            margin: 0;
-        }
+	
+    #main_content h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: Book Antiqua;
+      color: #fff;
+      font-size: 35px;
+    }
 
-        .title{
-            background-color: white;
-            text-align: center;
-            margin: 0 ;
-        }
-        
-        .title h1{
-            font-size: 2.4em;
-            color: #5e5e5e;
-        }
-        
-        .title p{
-            font-family: fantasy;
-            font-size: 2.4em;
-            color: black;
-        }
+    #main_content .sub_head {
+      color: white;
+      font-size: 18px;
+    }
 
-		.band p{
-			font-family: Microsoft Yahei Light;
-		}
+    #main_content .info {
+      color: white;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+	
+    #links {
+      margin-top: 50px;
+    }
 
-        /* #firstbackground修改 */
-		#firstpage:hover {  
-        top: 0px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-		}
+    #links a {
+      border: 2px solid rgba(255,255,255,0.20);
+      border-radius: 61px;
+      font-size: 12px;
+      color: #FFFFFF;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 10px 25px;
+      display: inline-block;
+      margin-right: 15px;
+    }
 
-		
     </style>
 </head>
 <body>
-    <div id="firstpage" class="card">
-        <div class="firstbackground">
-            <div id="banner" href="javascript:void(0)">
-                <div class="title">
-
-                    <article>
-                        <h1>生如夏花</h1>
-						<div>
-							<img id='breathing' src="red.png">
-						</div>
-                        <p id='flowers'>Let life be beautiful like summer flowers</p>
-                        <span>by RABINDRANATH TAGORE</span>
-                    </article>
-                </div>
-            </div>
-
-        </div>
-    </div>
+	<div id="container">
+	<video autoplay muted loop id="myVideo">
+	  <source src="video/video_background_clip.mp4" type="video/mp4">
+	</video>
+    <section id="main_content">
+		<div id="head">
+			<h1>WE only live once</h1>
+			<p class="sub_head">Welcome to the world. Life is splendid.</p>
+			<p class="info">(Hold on! The video might take a while to load.)</p>
+		</div>
+      <div id="links">
+        <a href="https://vimeo.com/152834042" target="_blank">View full-video</a>
+        <a href="javascript:void(0)">Send an E-mail</a>
+      </div>
+    </section>
+	</div>
     <div class="band">
         <div class="item-1">
             <a href="javascript:void(0)" class="card">
@@ -298,11 +200,29 @@
                 </article>
             </a>
         </div>
+	</div>
+    <div id="lastpage" class="card">
+        <div class="firstbackground">
+            <div id="banner" href="javascript:void(0)">
+                <div class="title">
+
+                    <article>
+                        <h1>生如夏花</h1>
+						<div>
+							<img id='breathing' src="red.png">
+						</div>
+                        <p id='flowers'>Let life be beautiful like summer flowers</p>
+                        <span>by RABINDRANATH TAGORE</span>
+                    </article>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <script>
-        // window.onload = function(){
-        //     alert('调整窗口大小试试~')
-        // }
-    </script>
 </body>
+<footer>
+	<div>
+		<p>Copyright © 2018 Ryan.  All Rights Reserved.</p>
+	</div>
+</footer>
 </html>
