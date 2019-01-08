@@ -3,124 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>生如夏花</title>
+	<link rel="icon" href="red.png" sizes="32x32">
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/video_background.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/video_background.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
     <style>
 
-        /* 媒体查询 */   
-		@media only screen and (min-width:440px){
-            .band {
-                grid-template-columns: 1fr 1fr ;
-            }
-            .item-1{
-            grid-column: 1/ span 2;
-			}
-        }
-
-        @media only screen and (min-width: 850px){
-            .band {
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-            }
-            .item-1{
-            grid-column: 1/ span 2;
-        }
-		
-		/* 头像呼吸灯 */
-		#breathing{
-			width: 150px;
-			height: 150px;
-			position: absolute;
-			top: 50%;
-			left: 50px;
-			margin-top: -75px;
-			-webkit-animation:myfirst 3.3s infinite;
+	/* 媒体查询 */   
+	@media only screen and (min-width:440px){
+		.band {
+			grid-template-columns: 1fr 1fr ;
 		}
-        }                
-		
-		@media only screen and (max-width: 850px){
-		/* 头像呼吸灯 */
-		#breathing{
-			width: 150px;
-			height: 150px;
-			position: relative;
-			top: 25px;
-			text-align: center;
-			-webkit-animation:myfirst 3.3s infinite;
+		.item-1{
+		grid-column: 1/ span 2;
 		}
-        }
-		
+	}
 
-    #main_content {
-		width:100%;
-		z-index: 2;
+	@media only screen and (min-width: 850px){
+		.band {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+		}
+		.item-1{
+		grid-column: 1/ span 2;
+	}
+	
+	/* 头像呼吸灯 */
+	#breathing{
+		width: 150px;
+		height: 150px;
 		position: absolute;
-		display: inline-block;
-		text-align:center;
+		top: 50%;
+		left: 50px;
+		margin-top: -75px;
+		-webkit-animation:myfirst 3.3s infinite;
+	}
+	}                
+	
+	@media only screen and (max-width: 850px){
+	/* 头像呼吸灯 */
+	#breathing{
+		width: 150px;
+		height: 150px;
+		position: relative;
+		top: 25px;
+		text-align: center;
+		-webkit-animation:myfirst 3.3s infinite;
+	}
+	}
 		
-		/* Vertical center */
-		top:50%;
-		margin: 0 auto 0;
-    }
-
-	
-    #main_content h1 {
-      text-transform: uppercase;
-      font-weight: 600;
-      font-family: Book Antiqua;
-      color: #fff;
-      font-size: 35px;
-    }
-
-    #main_content .sub_head {
-      color: white;
-      font-size: 18px;
-    }
-
-    #main_content .info {
-      color: white;
-      font-size: 12px;
-      margin-top: 10px;
-    }
-	
-    #links {
-      margin-top: 50px;
-    }
-
-    #links a {
-      border: 2px solid rgba(255,255,255,0.20);
-      border-radius: 61px;
-      font-size: 12px;
-      color: #FFFFFF;
-      letter-spacing: 1px;
-      text-decoration: none;
-      text-transform: uppercase;
-      padding: 10px 25px;
-      display: inline-block;
-      margin-right: 15px;
-    }
-
     </style>
 </head>
 <body>
 	<div id="container">
-	<video autoplay muted loop id="myVideo">
-	  <source src="video/video_background_clip.mp4" type="video/mp4">
-	</video>
-    <section id="main_content">
-		<div id="head">
-			<h1>WE only live once</h1>
-			<p class="sub_head">Welcome to the world. Life is splendid.</p>
-			<p class="info">(Hold on! The video might take a while to load.)</p>
+		<video autoplay muted loop id="myVideo">
+		  <source src="video/video_background_clip.mp4" type="video/mp4">
+		</video>
+		<div id="main_content">
+			<div id="head">
+				<h1>WE only live once</h1>
+				<p class="sub_head">Welcome to the world. Life is splendid.</p>
+				<p class="info">(Hold on! The video might take a while to load.)</p>
+			</div>
+		  <div id="links">
+			<a href="https://vimeo.com/152834042" target="_blank">View full-video</a>
+			<a href="javascript:void(0)">Send an E-mail</a>
+		  </div>
 		</div>
-      <div id="links">
-        <a href="https://vimeo.com/152834042" target="_blank">View full-video</a>
-        <a href="javascript:void(0)">Send an E-mail</a>
-      </div>
-    </section>
 	</div>
-    <div class="band">
+    <div id="band" class="band">
         <div class="item-1">
             <a href="javascript:void(0)" class="card">
                 <div class="thumb" style="background-image: url(img-1.jpg);"></div>
@@ -216,7 +167,6 @@
                     </article>
                 </div>
             </div>
-
         </div>
     </div>
 </body>
